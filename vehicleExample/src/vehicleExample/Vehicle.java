@@ -11,7 +11,7 @@ public class Vehicle {
 	private static long serialNumCounter = 1000000;
 	
 	public Vehicle() {
-		System.out.println("Create object with initialized cons");
+		System.out.println("Create vehicle with initialized cons");
 		numOfDoors = 4;
 		price = 10000;
 		maxSpeed = 200;
@@ -23,7 +23,7 @@ public class Vehicle {
 	// pramtized cons
 	public Vehicle(int nd, double pr, int ms) {
 		
-		System.out.println("Create object with parametied cons");
+		System.out.println("Create vehicle with parametied cons");
 		numOfDoors = nd;
 		price = pr;
 		maxSpeed = ms;
@@ -33,7 +33,7 @@ public class Vehicle {
 	
 	// copy cons
 	public Vehicle(Vehicle v) {
-		System.out.println("Create object with copy con");
+		System.out.println("Create vehicle with copy con");
 		
 		numOfDoors = v.numOfDoors;
 		price  = v.price;
@@ -69,5 +69,20 @@ public class Vehicle {
 	
 	public void showInfo() {
 		System.out.println("The vehicle has" + numOfDoors + "doors "+ " and serial number of"+ serialNum +" maximum speed of " + maxSpeed + "Km/h and the price is " + price);
+	}
+
+	@Override
+	public String toString() {
+		return "Vehicle [numOfDoors=" + numOfDoors + ", price=" + price + ", maxSpeed=" + maxSpeed + ", serialNum="
+				+ serialNum + "]";
+	}
+	
+	public boolean equal(Vehicle v) {
+		if(numOfDoors == v.numOfDoors && price == v.price) {
+			return true;
+		}else {
+			return false;
+		}
+		
 	}
 }
